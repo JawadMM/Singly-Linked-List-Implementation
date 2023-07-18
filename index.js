@@ -43,6 +43,14 @@ class LinkedList {
     this.length++;
   }
 
+  remove(index) {
+
+    const leaderNode = this.traversToIndex(index - 1);
+
+    leaderNode.next = leaderNode.next.next;
+    this.length--;
+  }
+
   traversToIndex(index) {
     let currentIndex = 0;
     let currentNode = this.head;
@@ -72,6 +80,7 @@ LL.append(5);
 LL.append(16);
 LL.preppend(1);
 
-LL.insert(3, 99);
+LL.remove(3);
+// LL.insert(3, 99);
 
 console.log(LL.printList());
