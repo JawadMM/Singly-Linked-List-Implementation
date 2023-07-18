@@ -44,10 +44,9 @@ class LinkedList {
   }
 
   remove(index) {
-
     const leaderNode = this.traversToIndex(index - 1);
-
-    leaderNode.next = leaderNode.next.next;
+    const unwantedNode = leaderNode.next;
+    leaderNode.next = unwantedNode.next;
     this.length--;
   }
 
@@ -80,7 +79,7 @@ LL.append(5);
 LL.append(16);
 LL.preppend(1);
 
-LL.remove(3);
+LL.remove(2);
 // LL.insert(3, 99);
 
 console.log(LL.printList());
